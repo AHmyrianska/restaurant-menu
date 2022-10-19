@@ -16,26 +16,13 @@ function handleAddBtn(itemId) {
     orderedArr.push(targetItem);
 
     renderOrder(orderedArr) 
-
-    // for (let item of orderedArr) {
-    //     console.log(orderedArr);
-    // let orderedItem = document.createElement('div');
-    // orderedItem.classList.add('ordered-item');
-    // orderedItem.innerHTML = `
-    //     <div class="order-item">
-    //         <h3>${item.name}</h3>
-    //         <p class="remove">remove</p>
-    //         <p class="price">${item.price}</p>
-    //     </div>
-    // `
-    // document.getElementById('order-wrapper').append(orderedItem);
-    // }
-
 }
 
 function renderOrder(list) {
     let orderedItem = document.createElement('div');
     orderedItem.classList.add('ordered-item');
+
+    let totalPrice = 0;
 
     for (let item of list) {
         orderedItem.innerHTML = `
@@ -45,8 +32,14 @@ function renderOrder(list) {
                 <p class="price">$${item.price}</p>
             </div>
         `
-        document.getElementById('order-wrapper').append(orderedItem); 
+
+        totalPrice += item.price;
+        document.getElementById('total-price').innerText = `$${totalPrice}`;
+
+        document.getElementById('order-wrapper').append(orderedItem);
     }
+
+    document.getElementById('order-container').style.display = 'flex';
 }
 
 function getFeedHtml() {

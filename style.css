@@ -30,9 +30,14 @@ h2 {
     padding: 0 0 70px 46px;
 }
 
-.menu-container,
-.order-container {
+.menu-container {
     display: flex;
+    flex-direction: column;
+    margin: 0 46px;
+}
+
+.order-container {
+    display: none;
     flex-direction: column;
     margin: 0 46px;
 }
@@ -53,6 +58,10 @@ h2 {
 .order-item,
 .total {
     height: 40px;
+}
+
+.total {
+    justify-content: space-between;
 }
 
 .description h3 {
