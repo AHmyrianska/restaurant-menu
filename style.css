@@ -3,6 +3,11 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     max-width: 600px;
+    background-color: white;
+}
+
+.hidden {
+    display: none;
 }
 
 .center {
@@ -44,6 +49,21 @@ h2 {
 
 .menu-container:first-child {
     margin-top: 20px;
+}
+
+.final-message {
+    margin: 0 46px;
+    background-color: #ECFDF5;
+}
+
+.final-message p{
+    font-weight: 400;
+    font-size: 32px;
+    color: #065F46;
+    text-align: center;
+    line-height: 120px;
+    padding: 0;
+
 }
 
 .menu-item,
@@ -96,7 +116,8 @@ hr.order {
     align-self: center;
 }
 
-.add-btn {
+.add-btn,
+.add-btn:target {
     font-size: 30px;
     color: gray;
     outline: none;
@@ -137,7 +158,8 @@ hr.order {
     outline: none;
 }
 
-.order-btn {
+.order-btn,
+.pay-btn {
     margin: 20px 0 50px 0;
     font-family: Verdana;
     font-weight: 700;
@@ -153,7 +175,78 @@ hr.order {
 }
 
 .order-btn:hover,
-.order-btn:focus {
+.order-btn:focus,
+.pay-btn:hover,
+.pay-btn:focus {
     box-shadow: 0 0 0 3px rgba(5, 72, 26, 0.382);
 }
 
+/* MODAL */
+
+.modal {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 130px;
+    margin: auto;
+    max-width: 524px;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 5px 5px 255px 0px #00000080;
+}
+
+.close-modal-btn-container{
+    text-align: right;
+    margin: 10px;
+}
+
+.modal-close-btn {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: lightgray;
+    outline: none;
+
+  }
+
+.modal-close-btn:hover,
+.modal-close-btn:active,
+.modal-close-btn:focus {
+    outline: none;
+    color: grey;
+    cursor: pointer;
+}
+
+.modal-form-container {
+    font-family: Verdana;
+    padding: 0 30px;
+}
+
+.modal p {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+input {
+    display: block;
+    font-family: 'Verdana';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 70px;
+    color: #757575;
+    border: 1px solid #757575;
+    border-radius: 3px;
+    margin: 25px 0;
+    padding-left: 15px;
+    width: 100%;
+    box-sizing: border-box; /*Щоб поля форми не виходили за межі блоку*/
+}
+
+.pay-btn {
+    display: block;
+    width: 100%;
+}

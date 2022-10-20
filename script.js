@@ -1,6 +1,36 @@
 import { items } from '/data.js';
 
+const orderBtn = document.getElementById('order-btn');
+const payBtn = document.getElementById('pay-btn');
+const orderContainer = document.getElementById('order-container');
+const modal = document.getElementById('modal');
+const modalCloseBtn = document.getElementById('modal-close-btn');
+const finalMessage = document.getElementById('final-message');
+const paymentForm = document.getElementById('payment-form');
+
+
 let orderedItems = [];
+
+orderBtn.addEventListener('click', function(){
+    modal.classList.remove('hidden');
+})
+
+modalCloseBtn.addEventListener('click', function(){
+    modal.classList.add('hidden');
+})
+
+paymentForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const paymentFormData = new FormData(paymentForm);    
+    const name = paymentFormData.get('name');
+       
+    modal.classList.add('hidden');
+    orderContainer.style.display = 'none';       
+    paymentForm.reset();
+
+    finalMessage.innerHTML = `<p>Thanks ${name}! Your order is on its way!</p>`; 
+    orderedItems = [];   
+})
 
 document.addEventListener('click', function(e) {
     if(e.target.dataset.add){
@@ -11,11 +41,30 @@ document.addEventListener('click', function(e) {
 })
 
 
-function handleAddBtn(itemId) {
+function handleAddBtn(id) {
+    finalMessage.innerHTML = '';
+    orderContainer.style.display = 'flex';
+
     let targetItem = items.filter(function(item) {
-        return item.uuid === itemId;
+        return item.uuid === id;
     })[0]
-    orderedItems.push(targetItem);
+
+    if(!orderedItems.find((item) => item.uuid == targetItem.uuid)) {
+         const newItem = {
+            uuid: targetItem.uuid,
+            name: targetItem.name,
+            quantity: 1,
+            price: targetItem.price,
+          };
+        orderedItems.push(newItem);
+    } else {
+        const temp = orderedItems.filter(
+          (item) => item.uuid === targetItem.uuid
+        )[0];
+        temp.price = temp.price + temp.price / temp.quantity;
+        temp.quantity++;
+      }
+
     renderOrderItems();
     renderTotal()
 }
@@ -31,7 +80,6 @@ function renderOrderItems() {
         });
     
         document.getElementById('order-wrapper').innerHTML = html.join("");
-        document.getElementById('order-container').style.display = 'flex';
     }
 
 
