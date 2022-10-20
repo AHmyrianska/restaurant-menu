@@ -116,15 +116,14 @@ hr.order {
     align-self: center;
 }
 
-.add-btn,
-.add-btn:target {
+.add-btn {
     font-size: 30px;
     color: gray;
     outline: none;
     background-color: transparent;
-    height: 50px;
+    border-radius: 100%;
     width: 50px;
-    border-radius: 50%;
+    height: 50px;
     border: 1px solid lightgrey;
     cursor: pointer;
     transition: all 200ms ease-in-out;
@@ -187,7 +186,7 @@ hr.order {
     position: fixed;
     right: 0;
     left: 0;
-    top: 130px;
+    top: 50px;
     margin: auto;
     max-width: 524px;
     border: 1px solid #757575;
