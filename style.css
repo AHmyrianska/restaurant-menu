@@ -59,9 +59,9 @@ h2 {
 .final-message p{
     font-weight: 400;
     font-size: 32px;
+    padding: 20px 0;
     color: #065F46;
     text-align: center;
-    line-height: 120px;
     padding: 0;
 
 }
