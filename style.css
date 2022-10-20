@@ -235,11 +235,11 @@ input {
     font-family: 'Verdana';
     font-weight: 400;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 40px;
     color: #757575;
     border: 1px solid #757575;
     border-radius: 3px;
-    margin: 10px 0;
+    margin: 15px 0;
     padding-left: 15px;
     width: 100%;
     box-sizing: border-box; /*Щоб поля форми не виходили за межі блоку*/
