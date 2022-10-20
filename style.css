@@ -191,6 +191,7 @@ hr.order {
     border-radius: 4px;
     background-color: white;
     box-shadow: 5px 5px 255px 0px #00000080;
+    height: 450px;
     overflow-y: auto;
 
 }
