@@ -1,7 +1,7 @@
 body {
     font-family: 'Smythe', cursive;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 0 auto 80px auto;
     max-width: 600px;
     background-color: white;
 }
@@ -191,9 +191,6 @@ hr.order {
     border-radius: 4px;
     background-color: white;
     box-shadow: 5px 5px 255px 0px #00000080;
-    height: 450px;
-    overflow-y: auto;
-
 }
 
 .close-modal-btn-container{
