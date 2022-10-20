@@ -2,7 +2,7 @@ export const items = [
     {
         name: 'Pizza',
         image: 'images/pizza.png',
-        composition: 'pepperoni,mushrom,mozarella',
+        composition: 'pepperoni, mushrom, mozarella',
         price: 14,
         uuid: '22bf9ba5-3a22-4daa-8e0e-5618c0f0e50e'
     },
